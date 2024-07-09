@@ -17,7 +17,8 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 
   return (
     <>
-      {isLoading && skeletons.map((skeleton) => <GenreSkeleton />)}
+      {isLoading &&
+        skeletons.map((skeleton) => <GenreSkeleton key={skeleton} />)}
       <List>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
