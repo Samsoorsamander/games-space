@@ -10,7 +10,7 @@ import GameHeading from "./commponents/GameHeading";
 import { Platform } from "./hooks/usePlatform";
 
 export interface GameQuery {
-  genre: Genre | null;
+  genreId?: number;
   platform: Platform | null;
   sortOrder: string;
   searchText: string;
@@ -37,8 +37,10 @@ function App() {
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
           <GenreList
-            selectedGenre={gameQuery.genre}
-            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+            selectedGenreId={gameQuery.genreId}
+            onSelectGenre={(genre) =>
+              setGameQuery({ ...gameQuery, genreId: genre })
+            }
           />
         </GridItem>
       </Show>
